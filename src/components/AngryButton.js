@@ -3,7 +3,7 @@ import React from 'react'; //optional
 //To achieve this, we need to import the useState() hook in each of the button components and call it.
 import { useState } from "react";
 
-function AngryButton() {
+function AngryButton(props) {
 // hooks are not inside conditionals, loops, or other functions, 
 //they need to be at the top of the component function. 
 //Calling the useState() hook will return an array containing two values:
@@ -12,8 +12,16 @@ function AngryButton() {
 
 const [anger, setAnger] = useState(0);
 
+const handleClick = function () {
+  if (anger < 1) {
+    setAnger(anger + 0.1);
+  } else {
+    setAnger(0);
+  }
+};
+
   return (
-    <button style={{backgroundColor: `rgba(255,0,0,${anger})`}} className="AngryButton">
+    <button onClick={handleClick} style={{backgroundColor: `rgba(255,0,0,${anger})`}} className="AngryButton">
       {anger < 1 && <span>Don't click me too much! </span>}
       {anger > 1 && <span>Rawr!</span>}
     </button>
