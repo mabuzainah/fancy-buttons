@@ -3,7 +3,7 @@ import React from 'react'; //optional
 //To achieve this, we need to import the useState() hook in each of the button components and call it.
 import { useState } from "react";
 
-function LightSwitchButton() {
+function LightSwitchButton(props) {
 // hooks are not inside conditionals, loops, or other functions, 
 //they need to be at the top of the component function.
 //Calling the useState() hook will return an array containing two values:
@@ -12,9 +12,16 @@ function LightSwitchButton() {
 
 
 const [light, setLight] = useState('off');
+const handleClick = function () {
+  if (light === "on") {
+    setLight('off')
+  } else {
+      setLight('on');
+  } 
+}
 
   return (
-    <button className="LightSwitchButton">
+    <button onClick={handleClick} className="LightSwitchButton">
       {light === "on" && <span className="on"><i>💡</i> I'm on!</span>}
       {light === "off" && <span className="off"><i>💡</i> I'm off!</span>}
     </button>
