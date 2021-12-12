@@ -10,7 +10,7 @@ function CounterButton() {
     //a reference to get the current value of the state
     //a setter function (i.e. a way to set the reference and re-render the app)
 
-const [clickAmount, setClickAmount] = useState();
+const [clickAmount, setClickAmount] = useState(0);
 
   return (
     <button className="CounterButton">
