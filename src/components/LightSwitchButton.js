@@ -11,7 +11,8 @@ function LightSwitchButton(props) {
     //a setter function (i.e. a way to set the reference and re-render the app)
 
 
-const [light, setLight] = useState('off');
+const light = props.light;
+const setLight = props.setLight;
 const handleClick = function () {
   if (light === "on") {
     setLight('off')
