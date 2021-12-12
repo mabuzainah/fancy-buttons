@@ -3,7 +3,7 @@ import React from 'react'; //optional
 //To achieve this, we need to import the useState() hook in each of the button components and call it.
 import { useState } from "react";
 
-function CounterButton() {
+function CounterButton(props) {
 // hooks are not inside conditionals, loops, or other functions, 
 //they need to be at the top of the component function. 
 //Calling the useState() hook will return an array containing two values:
@@ -12,8 +12,11 @@ function CounterButton() {
 
 const [clickAmount, setClickAmount] = useState(0);
 
+const handleClick = function () {
+    setClickAmount(clickAmount + 1);
+}
   return (
-    <button className="CounterButton">
+    <button onClick={handleClick} className="CounterButton">
       You clicked me {clickAmount} amount of times
     </button>
   );
