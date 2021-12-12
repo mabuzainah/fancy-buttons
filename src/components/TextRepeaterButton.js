@@ -12,16 +12,19 @@ function TextRepeaterButton() {
 
 
 const [repetition, setRepition] = useState(1);
+const handleClick = function () {
+  setRepition(repetition + 1);
+}
 
-const repititionArray = [];
+const repetitionArray = [];
 for (let i = 0; i < repetition; i++) {
-    repititionArray.push(<span key={i}>I like this text</span>);
+    repetitionArray.push(<span key={i}>I like this text!</span>);
     // reason why we did this as rendering arrays in React we require a key value for each child of an array. 
 }
 
   return (
-    <button className="TextRepeaterButton">
-      {repititionArray}
+    <button onClick={handleClick} className="TextRepeaterButton">
+      {repetitionArray}
     </button>
   );
 }
