@@ -10,7 +10,7 @@ function AngryButton() {
     //a reference to get the current value of the state
     //a setter function (i.e. a way to set the reference and re-render the app)
 
-const [anger, setAnger] = useState();
+const [anger, setAnger] = useState(0);
 
   return (
     <button style={{backgroundColor: `rgba(255,0,0,${anger})`}} className="AngryButton">
